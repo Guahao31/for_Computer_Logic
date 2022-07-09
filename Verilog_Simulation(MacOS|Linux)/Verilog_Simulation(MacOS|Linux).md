@@ -17,7 +17,7 @@ yum install iverilog # on CentOS
 brew install icarus-verilog # on MacOS with homebrew
 ```
 
-请根据你的平台进行调整。如果你更倾向于使用源码自行编译，请可以参考 [这个网站](https://iverilog.fandom.com/wiki/Installation_Guide#Compiling_on_Linux/Unix) 找到合适的安装指导。
+请根据你的平台进行调整。如果你更倾向于使用源码自行编译，请参考 [这个网站](https://iverilog.fandom.com/wiki/Installation_Guide#Compiling_on_Linux/Unix) 找到合适的安装指导。
 
 ## gtkwave
 
@@ -98,19 +98,19 @@ vvp demo0.vvp
 
 `File -> Open New Tab`并选择刚才得到的`.vcd`文件。你将看到如下界面
 
-<img src="Verilog仿真(MacOSLinux).assets/image-20220709133702274.png" alt="image-20220709133702274" style="zoom:20%;" />
+<img src="Verilog_Simulation(MacOS|Linux).assets/image-20220709133702274.png" alt="image-20220709133702274" style="zoom:20%;" />
 
 我们需要在左侧**SST**中选择仿真文件`demo0_tb`进而选择我们用于仿真的模块`m0`（不理解分别是什么名称可以返回testbench代码对照查看）。可以看到下边这样的界面
 
-<img src="Verilog仿真(MacOSLinux).assets/image-20220709133941789.png" alt="image-20220709133941789" style="zoom:20%;" />
+<img src="Verilog_Simulation(MacOS|Linux).assets/image-20220709133941789.png" alt="image-20220709133941789" style="zoom:20%;" />
 
 红框部分即为模块m0中的所有信号，我们可以选择想看的信号，长按`Crtl`或`Command`键并单击可以一次选择多个信号，选择完信号后，点击图中左下角的`Append`即可将信号波形展示出来，如下图：
 
-<img src="Verilog仿真(MacOSLinux).assets/image-20220709134207573.png" alt="image-20220709134207573" style="zoom:20%;" />
+<img src="Verilog_Simulation(MacOS|Linux).assets/image-20220709134207573.png" alt="image-20220709134207573" style="zoom:20%;" />
 
 对于一个*向量*我们可以双击进行展开（如图中`in`信号），这里由于单位时间所占长度过长，我们得不到有效的信息，可以点击上栏的放大镜进行放大或缩小。我们发现，0-20ns的时间范围不足以得到我们想要的全部信号，如下
 
-<img src="Verilog仿真(MacOSLinux).assets/image-20220709134431211.png" alt="image-20220709134431211" style="zoom:20%;" />
+<img src="Verilog_Simulation(MacOS|Linux).assets/image-20220709134431211.png" alt="image-20220709134431211" style="zoom:20%;" />
 
 笔者未能找到更方便改变时间范围的方法，解决办法是在最后的仿真命令后添加了新的`#10`，即改为：
 
@@ -122,13 +122,13 @@ initial begin
     in = 2'b10;
     #10; in = 2'b01;
     #10; in = 2'b00;
-  	#10;
+  	#10; // Changed Here!
 end
 ```
 
 这时我们得到了希望看到的全部波形。（如有更好的方式，烦请联系guahao@zju.edu.cn，非常希望得到您的建议！)
 
-<img src="Verilog仿真(MacOSLinux).assets/image-20220709135134820.png" alt="image-20220709135134820" style="zoom:20%;" />
+<img src="Verilog_Simulation(MacOS|Linux).assets/image-20220709135134820.png" alt="image-20220709135134820" style="zoom:20%;" />
 
 ### 一些解释
 
@@ -182,11 +182,11 @@ endmodule
 与`demo0_tb.v`仅减少了`include`同时改变了file名，同时`demo0.v`未做改变。
 
 ```bash
-iverilog -o demo0_tb_another.vpp demo0.v demo0_tb_another.v
-vvp demo0_tb_another.vpp
+iverilog -o demo0_tb_another.vvp demo0.v demo0_tb_another.v
+vvp demo0_tb_another.vvp
 ```
 
-我们可以得到完全一致的结果。更多可以查看iverilog手册或官网手册。
+我们可以得到完全一致的结果。更多参数和使用方法可以查看iverilog手册`man iverilog`或[官网手册](https://iverilog.fandom.com/wiki/User_Guide)。
 
-<img src="Verilog仿真(MacOSLinux).assets/image-20220709135829566.png" alt="image-20220709135829566" style="zoom:20%;" />
+<img src="Verilog_Simulation(MacOS|Linux).assets/image-20220709135829566.png" alt="image-20220709135829566" style="zoom:20%;" />
 
