@@ -1,0 +1,19 @@
+/*
+!.gitignore
+# For images
+!/Images
+!*.png
+!*.jpg
+!*.jpeg
+
+# For docs
+!*.md
+!*.tex
+
+# For slides
+!*.key
+
+# For code
+!*.c
+!*.v
+
