@@ -1,4 +1,4 @@
 *.pdf
 .DS_Store
-*.vpp
+*.vvp
 *.vcd
