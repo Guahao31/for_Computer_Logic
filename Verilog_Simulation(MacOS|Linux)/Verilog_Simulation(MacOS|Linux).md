@@ -7,7 +7,7 @@ Verilog仿真是判断模块功能是否正常的重要一步。如何写仿真�
 
 ## iverilog
 
-**Icarus Verilog** 是Verilog硬件描述语言的实验工具之一， 你可以进入 [官网](http://iverilog.icarus.com/)了解更多。
+**Icarus Verilog** 是Verilog硬件描述语言的实验工具之一， 你可以进入 [官网](http://iverilog.icarus.com/) 了解更多。
 
 你可以使用包管理简单的安装，比如：
 
@@ -21,7 +21,7 @@ brew install icarus-verilog # on MacOS with homebrew
 
 ## gtkwave
 
-**gtkwave**可用于查看*VCD*波形文件，你可以进入[官网](http://gtkwave.sourceforge.net/)了解更多并可在官网下载安装对应版本。
+**gtkwave**可用于查看*VCD*波形文件，你可以进入 [官网](http://gtkwave.sourceforge.net/) 了解更多并可在官网下载安装对应版本。
 
 ## How to use
 
@@ -126,7 +126,7 @@ initial begin
 end
 ```
 
-这时我们得到了希望看到的全部波形。（如有更好的方式，烦请联系guahao@zju.edu.cn，非常希望得到您的建议！)
+这时我们得到了希望看到的全部波形。（如有更好的方式，烦请联系 guahao@zju.edu.cn ，非常希望得到您的建议！)
 
 <img src="Verilog_Simulation(MacOS|Linux).assets/image-20220709135134820.png" alt="image-20220709135134820" style="zoom:20%;" />
 
@@ -186,7 +186,10 @@ iverilog -o demo0_tb_another.vvp demo0.v demo0_tb_another.v
 vvp demo0_tb_another.vvp
 ```
 
-我们可以得到完全一致的结果。更多参数和使用方法可以查看iverilog手册`man iverilog`或[官网手册](https://iverilog.fandom.com/wiki/User_Guide)。
+我们可以得到完全一致的结果。更多参数和使用方法可以查看iverilog手册`man iverilog`或 [官网手册](https://iverilog.fandom.com/wiki/User_Guide) 。
 
 <img src="Verilog_Simulation(MacOS|Linux).assets/image-20220709135829566.png" alt="image-20220709135829566" style="zoom:20%;" />
 
+#### 如果你只想用CLI
+
+如果gtkwave无法满足你只使用CLI来完成所有任务的要求，你可以使用 [yne/vcd](https://github.com/yne/vcd)。请参考他的项目主页完成安装并尝试使用。
