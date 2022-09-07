@@ -1,5 +1,6 @@
-*.pdf
+*pdf
 .DS_Store
 *.vvp
 *.vcd
 *.out
+demo_code/makefile
