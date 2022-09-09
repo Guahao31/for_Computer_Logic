@@ -1,6 +1,9 @@
-always @(posedge clk) begin
-  // a初始值为1,b初始值为0
-  a <= b;
-  b <= a;
-  // 结束时，a=0, b=1
-end
+case(<expression>)
+  case_item1: <single_statement>
+  case_item2,
+  case_item3: <single_statement>
+  case_item4: begin
+    <multiple_statement>
+  end
+  default: <statement>
+endcase
