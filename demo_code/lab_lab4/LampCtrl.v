@@ -8,6 +8,7 @@ module LampCtrl(
 	output wire F
 	);
 
+  // 规定模块参数，可以对这些参数进行修改，详见FitstLook@Verilog
 	parameter C_NUM = 8;
 	parameter C_MAX = 8'hFF;
 
@@ -19,7 +20,7 @@ module LampCtrl(
 	end
 
   //button pressed
-	assign w=S1^S2^S3; 
+	assign w=S1^S2^S3;
 
 	//lamp logic
   // 条件运算，与C语义类似；实质为多路选择器
@@ -34,8 +35,8 @@ module LampCtrl(
 		else if(count < C_MAX)
 			count = c_next; // c_next = count + 1'b1;
 	end
-  
+
 	//next logic
 	assign c_next = count + 1'b1;
 
-endmodule
+endmodule // LampCtrl
