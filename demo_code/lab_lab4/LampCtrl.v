@@ -9,8 +9,8 @@ module LampCtrl(
 	);
 
   // 规定模块参数，可以对这些参数进行修改，详见FitstLook@Verilog
-	parameter C_NUM = 8;
-	parameter C_MAX = 8'hFF;
+	parameter C_NUM = 28;
+	parameter C_MAX = 28'hFFFF_FFF;
 
 	reg [C_NUM-1:0] count;
 	wire [C_NUM-1:0] c_next;

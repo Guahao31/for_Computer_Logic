@@ -8,13 +8,8 @@ module LampCtrl_tb;
 	wire F;
 
 	// Instantiate the Unit Under Test (UUT)
-	LampCtrl uut (
-		.clk(clk), 
-		.S1(S1), 
-		.S2(S2), 
-		.S3(S3), 
-		.F(F)
-	);
+	LampCtrl #(.C_NUM(8), .C_MAX(8'hFF))
+    uut  ( .clk(clk), .S1(S1), .S2(S2), .S3(S3), .F(F));
 
   initial begin
     // 将vcd文件输出为“LampCtrl.vcd”
