@@ -22,16 +22,19 @@ module LampCtrl(
 	assign w=S1^S2^S3; 
 
 	//lamp logic
+  // 条件运算，与C语义类似；实质为多路选择器
+  // 这里的意义是，对F进行连续赋值：当count < C_MAX时赋1，否则赋0
 	assign F = (count < C_MAX) ? 1'b1 : 1'b0;
-	//<时F=1;=C_MAX时为0
+
 	//count logic
-	always@(posedge clk)
-	begin
+  // 每到clk信号的正边沿，执行
+	always@(posedge clk) begin
 		if(w == 1'b1)
 			count = 0;
 		else if(count < C_MAX)
-			count = c_next;
+			count = c_next; // c_next = count + 1'b1;
 	end
+  
 	//next logic
 	assign c_next = count + 1'b1;
 
