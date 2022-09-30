@@ -5,3 +5,4 @@
 *.vcd
 *.out
 demo_code/makefile
+demo_code/my_code/
