@@ -20,12 +20,12 @@ module LampCtrl_sch_tb();
 		.S1(S1)
    );
 // Initialize Inputs
-  integer i;
-	initial begin
-		for(i=0;i<=8;i=i+1)begin
-			{S3,S2,S1} <= i;
-			#50;
-		end
+   integer i;
+   initial begin
+      for(i=0;i<=8;i=i+1)begin
+         {S3,S2,S1} <= i;
+         #50;
+      end
    end
 	 
 endmodule // LampCtrl_sch_tb
