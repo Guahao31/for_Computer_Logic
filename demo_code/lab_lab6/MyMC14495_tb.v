@@ -21,7 +21,7 @@ module MyMC14495_tb();
   wire g;
 
 // Instantiate the UUT
-  MyMC14495 UUT (
+  MyMC14495_HDL UUT (
   .D0(D0), 
   .D1(D1), 
   .D2(D2), 
@@ -40,20 +40,24 @@ module MyMC14495_tb();
 // Initialize Inputs
   integer i;
   initial begin
+    $dumpfile("MyMC14495_HDL.vcd");
+    $dumpvars(1, MyMC14495_HDL_tb);
+
     D3 = 0;
     D2 = 0;
     D1 = 0;
     D0 = 0;
-    LE = 0;
+    LE = 1'b0;
     point = 0;
     
-    for (i=0; i<=15;i=i+1) begin
-      #50;
+    for (i=0; i<=15; i=i+1) begin
       {D3,D2,D1,D0}=i;
       point = i;
+      #50;
     end
       
     #50;
-    LE = 1;
+    LE = 1'b1;
+    #10;
   end
 endmodule
