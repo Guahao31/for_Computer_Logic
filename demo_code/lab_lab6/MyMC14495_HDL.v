@@ -15,7 +15,7 @@ module MyMC14495_HDL(
     if(1'b0 == LE) begin
       /* Able to print */
       // Point
-      p = ~point;
+      p = point;
       // Num(0~9, A~F)
       case(`MC14495_NUM)
         4'h0: `MC14495_OUT = 7'b000_0001;
