@@ -15,32 +15,34 @@ module MyMC14495_HDL(
     if(1'b0 == LE) begin
       /* Able to print */
       // Point
-      p = point;
+      p = ();                             // fill sth in ()
       // Num(0~9, A~F)
       case(`MC14495_NUM)
         4'h0: `MC14495_OUT = 7'b000_0001;
-        4'h1: `MC14495_OUT = 7'b100_1111;
-        4'h2: `MC14495_OUT = 7'b001_0010;
-        4'h3: `MC14495_OUT = 7'b000_0110;
-        4'h4: `MC14495_OUT = 7'b100_1100;
-        4'h5: `MC14495_OUT = 7'b010_0100;
-        4'h6: `MC14495_OUT = 7'b010_0000;
-        4'h7: `MC14495_OUT = 7'b000_1111;
-        4'h8: `MC14495_OUT = 7'b000_0000;
-        4'h9: `MC14495_OUT = 7'b000_0100;
-        4'hA: `MC14495_OUT = 7'b000_1000;
-        4'hB: `MC14495_OUT = 7'b110_0000;
-        4'hC: `MC14495_OUT = 7'b011_0001;
-        4'hD: `MC14495_OUT = 7'b100_0010;
-        4'hE: `MC14495_OUT = 7'b011_0000;
-        4'hF: `MC14495_OUT = 7'b011_1000;
+        /* Complete the following code. */
+        4'h1: ();
+        4'h2: ();
+        4'h3: ();
+        4'h4: ();
+        4'h5: ();
+        4'h6: ();
+        4'h7: ();
+        4'h8: ();
+        4'h9: ();
+        4'hA: ();
+        4'hB: ();
+        4'hC: ();
+        4'hD: ();
+        4'hE: ();
+        4'hF: ();
+        /* end of your code */
         default: `MC14495_OUT = 7'bxxx_xxxx;
       endcase
 
     end else begin
       // Print nothing (LE == 1)
-      `MC14495_OUT = 7'b111_1111;
-      p = 1'b1;
+      `MC14495_OUT = ();                  // fill sth in ()
+      p = ();                             // fill sth in ()
     end
 
   end
