@@ -18,7 +18,7 @@ module dispsync(
                 (2'b01 == Scan) ? 4'b1101 :
                 (2'b10 == Scan) ? 4'b1011:
                 (2'b11 == Scan) ? 4'b0111:
-                4'bxxxx;
+                4'b1111;
   
   // Similar to above for p & LE
   
