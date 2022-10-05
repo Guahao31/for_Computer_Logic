@@ -16,11 +16,13 @@ module CreateNumber#(
 
   initial num <= INIT_HEXES;
 
+  // A(the next num[3:0]) is always greater than current num[3:0] by 1
   assign A = num[ 3: 0] + 4'd1;
   assign B = num[ 7: 4] + 4'd1;
   assign C = num[11: 8] + 4'd1;
   assign D = num[15:12] + 4'd1;
 
+  // When pressing btn[0] num[3:0]++
   always @(posedge btn[0]) num[ 3: 0] <= A;
   always @(posedge btn[1]) num[ 7: 4] <= B;
   always @(posedge btn[2]) num[11: 8] <= C;
