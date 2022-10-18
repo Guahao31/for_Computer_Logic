@@ -6,4 +6,5 @@
 *.out
 demo_code/makefile
 demo_code/my_code/
+demo_code/release/
 demo_code/doc_firstlook@Verilog/a.v
