@@ -36,8 +36,9 @@ module AddSub #(
     end
   endgenerate
 
-  assign Co = C_temp[WIDTH];
+  assign Co = 1'b0 == Ctrl ? C_temp[WIDTH] : ~C_temp[WIDTH]; // deal with carry bit when subtracting
   assign S = S_temp;
+  
 
 
 endmodule
