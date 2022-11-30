@@ -30,7 +30,7 @@ module Top(
 	CSR_LATCH Mm2(.C(CK), .R(SW[0]), .S(SW[1]), .Q(LED[1]), .Qn(LED[0]));
 	D_LATCH Mm3(.C(CK), .D(SW[2]), .Q(LED[3]), .Qn(LED[2]));
 	MS_FLIPFLOP Mm4(.C(CK), .S(SW[4]), .R(SW[3]), .Y(LED[6]), .Q(LED[5]), .Qn(LED[4]));
-	D_FLIPFLOP Mm5(.C(CK), .D(SW[5]), .Q(LED8), .Qn(LED[7]));
+	D_FLIPFLOP Mm5(.C(CK), .D(SW[5]), .S(1'b1), .R(1'b1), .Q(LED8), .Qn(LED[7]));
 	
 	LEDP2S #(.DATA_BITS(16), .DATA_COUNT_BITS(4), .DIR(0))
 			U7 (.clk(clk), .rst(1'b0), .Start(div[20]), .PData({7'h3F, NLED[8:0]}), .sclk(ledclk), .sclrn(ledclrn),
